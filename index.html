@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Таро · AI Mini App</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand">
+        <div class="title">🔮 Таро · AI</div>
+        <div class="sub" id="hello">Расклад + ИИ трактовка</div>
+      </div>
+
+      <div class="controls">
+        <select id="spreadSelect">
+          <option value="one">Карта дня (1)</option>
+          <option value="three" selected>3 карты</option>
+          <option value="celtic">Кельтский крест (10)</option>
+        </select>
+
+        <button id="btnNew">Новый расклад</button>
+        <button id="btnRevealAll" class="primary">Открыть все</button>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="row">
+        <input id="question" placeholder="Задай вопрос (любовь/работа/деньги/выбор)…" />
+        <button id="btnAI" class="primary">Спросить ИИ</button>
+      </div>
+      <div class="hint">
+        Совет: задавай конкретно (“что мне сделать на этой неделе, чтобы…”) — ответы будут лучше.
+      </div>
+    </section>
+
+    <section id="board" class="board"></section>
+
+    <section class="panel">
+      <div class="row">
+        <button id="btnSave">Сохранить</button>
+        <button id="btnHistory">История</button>
+        <button id="btnShare">Поделиться</button>
+      </div>
+      <pre id="aiOut" class="aiOut">Тут появится трактовка от ИИ…</pre>
+    </section>
+
+    <footer class="foot">
+      Карты рисуются как SVG (без чужих картинок/авторских прав). Потом можно заменить на свою колоду PNG.
+    </footer>
+  </div>
+
+  <div id="modal" class="modal">
+    <div class="modalBox">
+      <div class="modalTitle" id="mTitle"></div>
+      <div class="modalBody" id="mBody"></div>
+      <div class="modalRow">
+        <button id="mClose" class="primary">Закрыть</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
